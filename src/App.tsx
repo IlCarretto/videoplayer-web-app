@@ -25,7 +25,6 @@ function App() {
   const [videoDuration, setVideoDuration] = useState(0);
   const [timestamp, setTimestamp] = useState(0);
   const [volume, setVolume] = useState(50);
-  const progressVolumeBarRef: React.MutableRefObject<HTMLProgressElement | null> = useRef(null);
 
   useEffect(() => {
     videoRef.current?.addEventListener('ended', () => {
@@ -40,7 +39,6 @@ function App() {
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.addEventListener('loadedmetadata', () => {
-        // Once the video metadata is loaded, you can access the duration
         setVideoDuration(videoRef.current?.duration!);
       });
     }
@@ -54,12 +52,9 @@ function App() {
     }
   }, []);
 
-  const handleFullScreen = () => {
-    if (videoRef.current) {
-        videoRef.current.requestFullscreen();
-        setIsFullScreen(!isFullScreen);
-    }
-  }
+  useEffect(() => {
+    console.log(videoRef.current?.volume);
+  }, [videoRef.current?.volume])
 
   return (
     <div className="App">

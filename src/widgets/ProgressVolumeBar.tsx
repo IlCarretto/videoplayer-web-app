@@ -18,9 +18,9 @@ const ProgressVolumeBar = ({volume, isMuted, videoRef, setIsMuted, setVolume}: I
           const clickX = e.nativeEvent.offsetX;
           const progressBarWidth = progressVolumeBarRef.current?.clientWidth;
           const newPercentage = (clickX / progressBarWidth) * 100;
-          const newVolume = (newPercentage / 100) * videoRef.current.volume;
+          const newVolume = (newPercentage / 100);
           videoRef.current.volume = newVolume;
-          setVolume(newPercentage);
+          setVolume(newVolume * 100);
           if(newVolume > 0) {
             setIsMuted(false);
           }
