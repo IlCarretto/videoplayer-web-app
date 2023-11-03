@@ -18,7 +18,8 @@ const ScreenSizeBtn = ({videoRef, isFullScreen, setIsFullScreen}: IScreenSizeBtn
 
   return (
     <button onClick={handleFullScreen} className="toggle-screensize">
-    {isFullScreen ? <AiOutlineFullscreenExit/> : <AiOutlineFullscreen/>}
+    {/* {isFullScreen ? <AiOutlineFullscreenExit/> : <AiOutlineFullscreen/>} */}
+      <AiOutlineFullscreen/>
     </button>
   )
 }

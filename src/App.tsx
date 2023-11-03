@@ -52,10 +52,6 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-    console.log(videoRef.current?.volume);
-  }, [videoRef.current?.volume])
-
   return (
     <div className="App">
       <div className='player'>
